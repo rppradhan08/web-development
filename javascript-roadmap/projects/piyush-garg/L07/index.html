@@ -13,9 +13,82 @@
     <li>differences between arrow and normal functions based on:</li>
     <ul>
         <li>this keyword</li>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Normal Function (<code>function myFunc()</code>)</th>
+                <th>Arrow Function (<code>const myFunc = () => {}</code>)</th>
+            </tr>
+            <tr>
+                <td><strong>How <code>this</code> is determined?</strong></td>
+                <td>Determined by how the function is called</td>
+                <td>Lexically inherited (from surrounding scope)</td>
+            </tr>
+            <tr>
+                <td><strong>Value of <code>this</code> in global scope?</strong></td>
+                <td><code>window</code> (in browsers) or <code>global</code> (in Node.js)</td>
+                <td>Same as normal function (window/global)</td>
+            </tr>
+            <tr>
+                <td><strong>Value of <code>this</code> inside an object method?</strong></td>
+                <td>Refers to the object the method belongs to</td>
+                <td>Refers to the outer scope, NOT the object</td>
+            </tr>
+            <tr>
+                <td><strong>Value of <code>this</code> inside a class method?</strong></td>
+                <td>Refers to the instance of the class</td>
+                <td>Undefined (does not bind <code>this</code> to the instance)</td>
+            </tr>
+        </table>
         <li>arguments keywords</li>
-        <li>hoistng</li>
-    </ul>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Normal Function (<code>function myFunc()</code>)</th>
+                <th>Arrow Function (<code>const myFunc = () => {}</code>)</th>
+            </tr>
+            <tr>
+                <td><strong>Has <code>arguments</code> object?</strong></td>
+                <td>✅ Yes (Contains all passed arguments)</td>
+                <td>❌ No (Throws <code>ReferenceError</code> if used directly)</td>
+            </tr>
+            <tr>
+                <td><strong>How to access arguments?</strong></td>
+                <td>Using <code>arguments</code> keyword inside the function</td>
+                <td>Use **rest parameters** (<code>...args</code>) instead</td>
+            </tr>
+            <tr>
+                <td><strong>Scope of <code>arguments</code></strong></td>
+                <td>Function-scoped (Local to the function)</td>
+                <td>Not available (Inherits from surrounding function if used inside one)</td>
+            </tr>
+        </table>    
+        <li>hoistng</li>    
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Normal Function (<code>function declaration</code>)</th>
+                <th>Arrow Function (<code>const myFunc = () => {}</code>)</th>
+            </tr>
+            <tr>
+                <td><strong>Hoisted?</strong></td>
+                <td>✅ Yes (Fully Hoisted)</td>
+                <td>❌ No (Only variable is hoisted, not the function definition)</td>
+            </tr>
+            <tr>
+                <td><strong>Can be used before declaration?</strong></td>
+                <td>✅ Yes</td>
+                <td>❌ No (Throws <code>TypeError</code>)</td>
+            </tr>
+            <tr>
+                <td><strong>Stored in</strong></td>
+                <td>Memory during the compilation phase</td>
+                <td>Heap, as part of variable assignment at runtime</td>
+            </tr>
+        </table>
+    
+    </body>
+    </html>    </ul>
     <hr>
     <script src="./script.js"></script>
 </body>
