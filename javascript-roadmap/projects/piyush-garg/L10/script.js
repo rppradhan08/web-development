@@ -29,3 +29,17 @@ console.log("Printing the innerHTML of all paragraph element in console")
 allParagraphs.forEach(pElement => {
     console.log(pElement.innerHTML)
 })
+
+
+// getElementbyID
+idElement = window.document.getElementById("heading")
+console.log(idElement.innerHTML)
+
+// getElementsbyClassName
+
+classElement = document.getElementsByClassName("text")
+console.log(classElement)
+for(let i=0; i<classElement.length;i++){
+    console.log(classElement.item(i))
+    console.log(classElement.item(i).innerHTML)
+}
