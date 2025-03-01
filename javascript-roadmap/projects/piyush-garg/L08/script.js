@@ -51,3 +51,17 @@ console.log("filter using arrow function:",result)          // [3,4]
 result = arr.reduce((num1, num2) =>  num2+num1,0)           // single line AF
 result = arr.reduce((num1, num2) => {return num2+num1},0)   // Alternatively, using braces
 console.log("reduce using arrow function:",result)
+
+
+// Callback Functions
+function greet(name, callback) {
+    console.log("Hello, " + name);
+    callback();
+}
+
+function afterGreet() {
+    console.log("Welcome to JavaScript!");
+}
+
+
+greet("Raj", afterGreet);

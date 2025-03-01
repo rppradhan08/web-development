@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>1. What is the DOM?</h2>
+    <p>The DOM (Document Object Model) is a programming interface for web documents. It represents the page as a tree
+        structure where:</p>
+    <li>
+        JavaScript can access and manipulate these nodes dynamically.
+    </li>
+    <li>
+        Each HTML element is a node in the tree.
+    </li>
+    <p>
+        Selecting Elements in the DOM
+        <li>Using <b>querySelector()</b>: The querySelector() method allows you to select the first matching element using CSS
+            selectors.
+            document.querySelector("CSS_SELECTOR");
+            <ul>
+                <li>It returns only the first element that matches the selector.</li>
+                <li>If no element is found, it returns null.</li>
+            </ul>
+        </li>
+        <li>Using The <b>querySelectorAll()</b>: This method selects all matching elements and returns a NodeList (not an
+            array).
+        </li>
+    <ul>
+        <li>It returns a NodeList, which is similar to an array but does not have array methods like map() directly.
+        </li>
+        <li>You can loop through the NodeList using forEach().</li>
+    </ul>
+    </p>
+</body>
+
+</html>
