@@ -37,23 +37,24 @@ function addTask(){
     taskList.appendChild(li);
     
 }
-
+/*
+When you remove elements from a live HTMLCollection while iterating, the collection is updated immediately, causing your loop to skip elements.
+Looping from the end to the beginning prevents skipping because removal doesn't affect the indices of the remaining items you've yet to process.
+*/
 function removeTask() {
     console.log("Remove Task triggered");
     // Get the task items
     const taskItems = document.getElementsByClassName('task-item');
     
     // Iterate over the task items using a for...in loop (ensure only own properties are processed)
-    for (let key in taskItems) {
-        if (taskItems.hasOwnProperty(key)) {
-            const task = taskItems[key];
-            // Get the checkbox input within the current task item
-            const checkbox = task.querySelector("input[type='checkbox']");
+    for (let i = taskItems.length - 1; i >= 0; i--) {
+        const task = taskItems[i];;
+        // Get the checkbox input within the current task item
+        const checkbox = task.querySelector("input[type='checkbox']");
+        // If the checkbox exists and is checked, remove the task item from the DOM
+        if (checkbox && checkbox.checked) {
+            task.remove();
             console.log(checkbox);
-            // If the checkbox exists and is checked, remove the task item from the DOM
-            if (checkbox && checkbox.checked) {
-                task.remove();
-            }
         }
     }
 }
